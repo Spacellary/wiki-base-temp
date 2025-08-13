@@ -1,20 +1,19 @@
 :root {
-  --background-color: #121212;
-  --surface-color: #1e1e1e;
-  --text-color: #e0e0e0;
-  --secondary-text-color: #b0b0b0;
-  --link-color: #64ffda;
-  --accent-color: #64ffda;
-  --border-color: #333333;
-  --code-background: #252525;
-  --code-text: #64ffda;
-  --header-color: #e0e0e0;
-  --font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  --font-family-mono: 'Fira Code', 'Roboto Mono', monospace;
+  --background-color: #0d0d0d;
+  --surface-color: #1a1a1a;
+  --text-color: #ffffff;
+  --secondary-text-color: #aaaaaa;
+  --link-color: #ff0000;
+  --accent-color: #ff0000;
+  --border-color: #444444;
+  --code-background: #282828;
+  --code-text: #ffffff;
+  --header-color: #ffffff;
+  --font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-family-mono: 'Roboto Mono', 'Fira Code', monospace;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono&display=swap');
 
 body {
   background-color: var(--background-color);
@@ -33,7 +32,7 @@ a {
 }
 
 a:hover {
-  color: #a7ffeb;
+  color: #ff5555;
 }
 
 .markdown-section h1,
@@ -41,7 +40,7 @@ a:hover {
 .markdown-section h3,
 .markdown-section h4 {
   color: var(--header-color);
-  font-weight: 600;
+  font-weight: 500;
   margin: 1.5rem 0 0.5rem;
 }
 
@@ -81,7 +80,7 @@ a:hover {
 
 .markdown-section pre code {
   background: none;
-  color: var(--text-color);
+  color: var(--code-text);
   padding: 0;
 }
 
@@ -152,6 +151,27 @@ a:hover {
   color: var(--accent-color);
 }
 
+/* Scrollbar Styles */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--link-color) var(--surface-color);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--link-color);
+  border-radius: 4px;
+  border: 2px solid var(--surface-color);
+}
+
 /* Code Syntax Highlighting */
 .token.comment,
 .token.prolog,
@@ -178,3 +198,25 @@ a:hover {
 .token.attr-name {
   color: #f92672;
 }
+
+.markdown-section .tip {
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  border-left-color: var(--link-color);
+}
+.markdown-section .tip:before {
+  background-color: var(--link-color);
+  color: var(--surface-color);
+  font-weight: 700;
+}
+.markdown-section .warn {
+  background: #ff000033;
+  color: var(--text-color);
+}
+
+input[type='search'] {
+  background: var(--code-background);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
