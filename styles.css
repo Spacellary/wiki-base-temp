@@ -1,6 +1,8 @@
 /**
  * Docsify Modern Dark Theme
  * A clean, modern, and developer-centric theme.
+ *
+ * Modified to remove all divider lines for a flat design.
  */
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap");
@@ -14,7 +16,7 @@
   --text-primary: #e2e2e2;
   --text-secondary: #a0a0a0;
   --text-bright: #ffffff;
-  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color: transparent; /* Changed to transparent to remove lines */
 
   /* Typography */
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
@@ -97,7 +99,7 @@ kbd {
   font-size: 0.85em;
   font-family: var(--font-mono);
   background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  border: 1px solid transparent; /* Changed to transparent */
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   margin: 0 2px;
@@ -147,7 +149,7 @@ main {
 /* Sidebar */
 .sidebar {
   background-color: var(--bg-primary);
-  border-right: 1px solid var(--border-color);
+  border-right: none; /* Changed to none */
   overflow-y: auto;
   padding: 40px 0 0;
   position: absolute;
@@ -268,7 +270,7 @@ main {
 }
 .app-nav li ul {
   background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  border: none; /* Changed to none */
   border-radius: var(--border-radius);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   display: none;
@@ -316,7 +318,7 @@ main {
 .markdown-section h2 {
   font-size: 1.75rem;
   margin: 45px 0 1rem;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none; /* Changed to none */
   padding-bottom: 0.5rem;
 }
 .markdown-section h3 {
@@ -335,14 +337,14 @@ main {
 }
 .markdown-section hr {
   border: none;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none; /* Changed to none */
   margin: 2em 0;
 }
 .markdown-section blockquote {
   margin: 1.5em 0;
   padding: 0.5em 0 0.5em 1.5em;
   color: var(--text-secondary);
-  border-left: 4px solid var(--theme-color);
+  border-left: none; /* Changed to none */
   background: var(--bg-secondary);
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
@@ -357,7 +359,7 @@ main {
   border-spacing: 0;
   border-collapse: collapse;
   margin-bottom: 1rem;
-  border: 1px solid var(--border-color);
+  border: none; /* Changed to none */
   border-radius: var(--border-radius);
 }
 .markdown-section th {
@@ -367,7 +369,7 @@ main {
 .markdown-section th,
 .markdown-section td {
   padding: 10px 15px;
-  border: 1px solid var(--border-color);
+  border: none; /* Changed to none */
 }
 .markdown-section tr:nth-child(2n) {
   background-color: transparent; /* Remove zebra stripes */
@@ -379,14 +381,14 @@ main {
   padding: 12px 24px;
   margin: 2em 0;
   background-color: var(--bg-secondary);
-  border-left: 4px solid;
+  border-left: none; /* Changed to none */
   border-radius: var(--border-radius);
 }
 .markdown-section p.tip {
-  border-color: var(--theme-color);
+  border-color: transparent; /* Changed to transparent */
 }
 .markdown-section p.warn {
-  border-color: #f66; /* Warning red */
+  border-color: transparent; /* Changed to transparent */
 }
 .markdown-section p.tip:before,
 .markdown-section p.warn:before {
@@ -411,7 +413,7 @@ main {
 .markdown-section pre {
   font-family: var(--font-mono);
   background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  border: none; /* Changed to none */
   border-radius: var(--border-radius);
   padding: 1em 1.4em;
   line-height: 1.5rem;
@@ -536,7 +538,7 @@ body.close .content {
 .search input[type="search"] {
   width: 100%;
   padding: 10px 15px 10px 40px;
-  border: 1px solid var(--border-color);
+  border: none; /* Changed to none */
   background-color: var(--bg-secondary);
   color: var(--text-primary);
   border-radius: var(--border-radius);
@@ -557,7 +559,7 @@ body.close .content {
 }
 .search .results-panel {
   background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  border: none; /* Changed to none */
   border-radius: var(--border-radius);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
