@@ -1,2 +1,4 @@
-- [Read Me](README)
-- [Example Second Page](second-page)
+- [Start here!](README)
+- [Part 1: The Great Change](first-page)
+- [Part 2: The Machines](second-page)
+- [Possible Solutions](solutions)
