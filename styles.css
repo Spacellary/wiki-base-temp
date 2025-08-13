@@ -531,6 +531,11 @@ body.close .content {
 }
 
 /* Search Plugin */
+.search {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: none;
+}
 .search .input-wrap {
   position: relative;
   z-index: 1;
