@@ -1,1 +1,3 @@
-First Page content! Part 1! Keep going!
+First Page content! Part 1! Continue in the [second-page](/second-page.md)!
+
+Theres a bonus [here](/bonus/bonus.md)...
