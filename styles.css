@@ -1,16 +1,17 @@
 :root {
   --background-color: #000000;
-  --surface-color: rgba(255, 255, 255, 0.05); /* Semi-transparent for glass effect */
+  --surface-color: #121212; /* A flat, dark gray for surfaces */
   --text-color: #ffffff;
   --secondary-text-color: #b0b0b0;
   --link-color: #64ffda; /* A high-contrast accent color */
   --accent-color: #64ffda;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --code-background: rgba(255, 255, 255, 0.08);
+  --border-color: transparent; /* No visible borders */
+  --code-background: #1e1e1e;
   --code-text: #ffffff;
   --header-color: #ffffff;
   --font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   --font-family-mono: 'Fira Code', 'Roboto Mono', monospace;
+  --glow-color: rgba(100, 255, 218, 0.5); /* Semi-transparent glow */
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap');
@@ -24,20 +25,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Glassy Sidebar & Navigation */
+/* Sidebar & Navigation */
 .sidebar {
   background-color: var(--surface-color);
-  backdrop-filter: blur(20px);
-  border-right: 1px solid var(--border-color);
+  border-right: none;
   transition: transform 0.3s ease;
 }
 
 .sidebar > h1 {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--background-color);
   padding: 20px 0;
   margin: 0;
-  border-bottom: 1px solid var(--border-color);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .sidebar ul li a {
@@ -50,15 +49,26 @@ body {
 
 .sidebar ul li a:hover {
   color: var(--link-color);
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: #1e1e1e;
 }
 
 .sidebar ul li.active > a {
   color: var(--accent-color);
   font-weight: 600;
-  border-left: 3px solid var(--accent-color);
-  padding-left: 12px;
-  background-color: rgba(255, 255, 255, 0.08);
+  position: relative;
+  border-left: none;
+  padding-left: 15px;
+  background-color: #1e1e1e;
+}
+
+.sidebar ul li.active > a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--accent-color);
 }
 
 /* Content Area */
@@ -73,8 +83,8 @@ body {
 
 .markdown-section h1 {
   font-size: 2.5rem;
-  border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.5rem;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .markdown-section h2 {
@@ -98,7 +108,7 @@ body {
 
 .markdown-section pre {
   background-color: var(--code-background);
-  border: 1px solid var(--border-color);
+  border: none;
   padding: 1.5em;
   border-radius: 8px;
   overflow-x: auto;
@@ -117,7 +127,6 @@ body {
   color: var(--secondary-text-color);
   margin: 1.5em 0;
   padding-left: 1.5em;
-  font-style: italic;
 }
 
 /* Table */
@@ -129,9 +138,9 @@ body {
 
 .markdown-section th,
 .markdown-section td {
-  border: 1px solid var(--border-color);
   padding: 12px 15px;
   text-align: left;
+  border: none;
 }
 
 .markdown-section th {
@@ -164,7 +173,7 @@ a:hover {
   color: var(--accent-color);
 }
 
-/* Custom Scrollbar for a clean look */
+/* Custom Scrollbar */
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--link-color) var(--code-background);
@@ -207,21 +216,28 @@ a:hover {
   padding: 1rem;
 }
 
-/* Search Input */
+/* Search Input with Glow */
 input[type='search'] {
   background: var(--code-background);
-  border: 1px solid var(--border-color);
+  border: none;
   color: var(--text-color);
   padding: 8px 12px;
   border-radius: 4px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: none;
 }
+
+input[type='search']:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--link-color), 0 0 10px 2px var(--glow-color);
+}
+
 
 /* Sidebar Toggle for Mobile */
 @media screen and (max-width: 768px) {
   .sidebar-toggle {
     background-color: var(--surface-color);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 50%;
     width: 48px;
     height: 48px;
